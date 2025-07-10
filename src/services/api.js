@@ -168,6 +168,8 @@ export const healthCheck = async () => {
   return response.json();
 };
 
+export { API_BASE_URL };
+
 const apiService = { authAPI, postAPI, healthCheck };
 
 export default apiService;
