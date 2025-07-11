@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../AuthContext';
+import { useAuth } from '../hooks/useAuth';
 import { API_BASE_URL } from '../services/api';
 
 const questionPapers = [

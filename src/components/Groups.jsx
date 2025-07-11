@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../AuthContext';
+import { useAuth } from '../hooks/useAuth';
 
 const Groups = () => {
   const { logout } = useAuth();
@@ -147,7 +147,7 @@ const Groups = () => {
     if (Object.keys(messages).length === 0) {
       setMessages(initialMessages);
     }
-  }, []);
+  }, [messages, initialMessages]);
 
   const toggleChat = (groupName) => {
     setOpenChats(prev => ({
@@ -276,7 +276,7 @@ const Groups = () => {
                   <button className="close-chat-btn" onClick={() => toggleChat(groupName)}>×</button>
                 </div>
                 <div className="chat-messages">
-                  {messages[groupName]?.map((msg, idx) => (
+                  {messages[groupName]?.map((msg) => (
                     <div key={msg.id} className={`message ${msg.sender === 'You' ? 'own-message' : 'other-message'}`}>
                       <div className="message-header">
                         <span className="message-sender">{msg.sender}</span>

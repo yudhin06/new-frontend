@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../AuthContext';
+import { useAuth } from '../hooks/useAuth';
 import { useEffect } from 'react';
 
 const dashboardFeatures = [
@@ -15,14 +15,15 @@ const dashboardFeatures = [
   { label: 'About', icon: 'ℹ️', link: '/about', isRoute: true },
 ];
 
-const questionPapers = [
+// Unused variables - kept for future use
+const _questionPapers = [
   { name: 'AI-ML Midterm 2023', subject: 'AI-ML', year: 2023, url: '#' },
   { name: 'Communications End Sem 2022', subject: 'Communications', year: 2022, url: '#' },
   { name: 'Data Structures Midterm 2021', subject: 'Data Structures', year: 2021, url: '#' },
   { name: 'Computer Networks End Sem 2023', subject: 'Computer Networks', year: 2023, url: '#' },
 ];
 
-const textbooks = [
+const _textbooks = [
   { name: 'Introduction to Machine Learning', subject: 'AI-ML', author: 'Tom Mitchell', url: '#' },
   { name: 'Pattern Recognition and Machine Learning', subject: 'AI-ML', author: 'Christopher Bishop', url: '#' },
   { name: 'Introduction to Algorithms', subject: 'DSA', author: 'Thomas H. Cormen', url: '#' },
@@ -33,10 +34,10 @@ const textbooks = [
   { name: 'Fluent Python', subject: 'Python', author: 'Luciano Ramalho', url: '#' },
 ];
 
-const trendingTags = [
+const _trendingTags = [
   '#AI-ML', '#Programming', '#StudyTips', '#Career', '#Groups', '#Textbooks', '#QuestionPapers'
 ];
-const motivationalQuote = "Success is the sum of small efforts, repeated day in and day out.";
+const _motivationalQuote = "Success is the sum of small efforts, repeated day in and day out.";
 
 const MainPage = ({ darkMode, setDarkMode }) => {
   const { user, isLoading, logout } = useAuth();
